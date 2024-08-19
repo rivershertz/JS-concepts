@@ -1,3 +1,5 @@
+// All of these functions are solutions to the challenges in https://www.csbin.io/async
+
 /* CHALLENGE 2 */
 function delayedGreet() {
   setTimeout(() => {
