@@ -1,1 +1,1 @@
-# JS Concept Implemented and Practiced
+# JS Concepts Implemented and Practiced
