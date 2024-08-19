@@ -7,7 +7,7 @@ function createFunction() {
   };
 }
 const fn1 = createFunction();
-fn1();
+// fn1();
 
 // challenge 2
 function createFunctionPrinter() {
@@ -16,7 +16,7 @@ function createFunctionPrinter() {
   };
 }
 const fn2 = createFunctionPrinter();
-fn2('woohoo');
+// fn2('woohoo');
 
 // challenge 3
 function addByX(x) {
@@ -25,7 +25,7 @@ function addByX(x) {
   };
 }
 const addBy10 = addByX(10);
-addBy10(2);
+// addBy10(2);
 
 // challenge 4
 function once(callback) {
@@ -42,9 +42,9 @@ function once(callback) {
 }
 
 const calledOnce = once((input) => input + 10);
-console.log(calledOnce(2));
-console.log(calledOnce(12));
-console.log(calledOnce(200));
+// console.log(calledOnce(2));
+// console.log(calledOnce(12));
+// console.log(calledOnce(200));
 
 // challenge 5
 function after(count, func) {
@@ -59,10 +59,10 @@ function after(count, func) {
 const fn5 = after(3, () => {
   console.log('Finally ran after 3 times');
 });
-fn5();
-fn5();
-fn5();
-fn5();
+// fn5();
+// fn5();
+// fn5();
+// fn5();
 
 // CHALLENGE 6
 function delay(func, wait) {
@@ -74,7 +74,7 @@ function delay(func, wait) {
 const delayedAddition = delay((num1, num2) => {
   console.log(`Timed out: ${num1}+${num2}=${num1 + num2}`);
 }, 100);
-delayedAddition(1, -20);
+// delayedAddition(1, -20);
 
 // CHALLENGE 7
 function rollCall(names) {
@@ -91,11 +91,11 @@ function rollCall(names) {
 
 const names = ['nahar', 'ayala', 'dvir', 'maya'];
 const rollCalled = rollCall(names);
-rollCalled();
-rollCalled();
-rollCalled();
-rollCalled();
-rollCalled();
+// rollCalled();
+// rollCalled();
+// rollCalled();
+// rollCalled();
+// rollCalled();
 
 // CHALLENGE 8
 function saveOutput(func, magicWord) {
@@ -110,8 +110,8 @@ function saveOutput(func, magicWord) {
   };
 }
 const fn8 = saveOutput((input) => input + input, 'sharamha');
-console.log(fn8(2));
-console.log(fn8('sharamha'));
+// console.log(fn8(2));
+// console.log(fn8('sharamha'));
 
 // CHALLENGE 9
 function cycleIterator(array) {
@@ -122,8 +122,8 @@ function cycleIterator(array) {
   };
 }
 const fn9 = cycleIterator([1, 2]);
-console.log(fn9());
-console.log(fn9());
+// console.log(fn9());
+// console.log(fn9());
 
 // CHALLENGE 10
 function defineFirstArg(func, arg) {
@@ -133,7 +133,7 @@ function defineFirstArg(func, arg) {
 }
 const multiply = (num1, num2) => num1 * num2;
 const multiplyBy10 = defineFirstArg(multiply, 10);
-console.log(multiplyBy10(10));
+// console.log(multiplyBy10(10));
 
 // CHALLENGE 11
 function dateStamp(func) {
@@ -143,7 +143,7 @@ function dateStamp(func) {
 }
 
 const fn11 = dateStamp(multiply);
-console.log(fn11(2, 7));
+// console.log(fn11(2, 7));
 
 // CHALLENGE 12
 function censor() {
@@ -165,11 +165,11 @@ function censor() {
 const switchWords = censor();
 switchWords('warm', 'hot');
 switchWords('storm', 'plot');
-console.log(
-  switchWords(
-    "Baklava so sweet and tea so warm, together they make the perfect storm! With flaky layers and honeyed bliss, sip your tea and take a bite—oh, what a treat you wouldn't want to miss!"
-  )
-);
+// console.log(
+//   switchWords(
+//     "Baklava so sweet and tea so warm, together they make the perfect storm! With flaky layers and honeyed bliss, sip your tea and take a bite—oh, what a treat you wouldn't want to miss!"
+//   )
+// );
 
 // CHALLENGE 13
 function createSecretHolder(secret) {
@@ -183,9 +183,9 @@ function createSecretHolder(secret) {
   return {getSecret, setSecret};
 }
 const {getSecret, setSecret} = createSecretHolder('secret');
-console.log(getSecret());
-setSecret('new secret');
-console.log(getSecret());
+// console.log(getSecret());
+// setSecret('new secret');
+// console.log(getSecret());
 
 // CHALLENGE 14
 function callTimes() {
@@ -194,8 +194,8 @@ function callTimes() {
 }
 
 const counterFunc = callTimes();
-console.log(counterFunc());
-console.log(counterFunc());
+// console.log(counterFunc());
+// console.log(counterFunc());
 
 // CHALLENGE 15
 function roulette(num) {
@@ -209,10 +209,10 @@ function roulette(num) {
 }
 
 const newRoulette = roulette(3);
-console.log(newRoulette());
-console.log(newRoulette());
-console.log(newRoulette());
-console.log(newRoulette());
+// console.log(newRoulette());
+// console.log(newRoulette());
+// console.log(newRoulette());
+// console.log(newRoulette());
 
 // CHALLENGE 16
 function average() {
@@ -235,10 +235,10 @@ function average() {
   }
 }
 const averageCalculator = average();
-console.log(averageCalculator());
-console.log(averageCalculator(2));
-console.log(averageCalculator());
-console.log(averageCalculator(8));
+// console.log(averageCalculator());
+// console.log(averageCalculator(2));
+// console.log(averageCalculator());
+// console.log(averageCalculator(8));
 
 // CHALLENGE 17
 function makeFuncTester(arrOfTests) {
@@ -256,7 +256,7 @@ const checkIfFirstIsHalfOfSecond = makeFuncTester([
   testArr2,
   testArr3,
 ]);
-console.log(checkIfFirstIsHalfOfSecond((input) => input * 2));
+// console.log(checkIfFirstIsHalfOfSecond((input) => input * 2));
 
 // CHALLENGE 18
 function makeHistory(limit) {
@@ -288,10 +288,55 @@ function makeHistory(limit) {
 }
 
 const {handleHistory, getHistory} = makeHistory(3);
-console.log(handleHistory('undo'));
-console.log(handleHistory('first'));
-console.log(handleHistory('undo'));
-console.log(handleHistory('first'));
-console.log(handleHistory('second'));
-console.log(handleHistory('third'));
-console.log(getHistory());
+// console.log(handleHistory('undo'));
+// console.log(handleHistory('first'));
+// console.log(handleHistory('undo'));
+// console.log(handleHistory('first'));
+// console.log(handleHistory('second'));
+// console.log(handleHistory('third'));
+// console.log(getHistory());
+
+// CHALLENGE 19
+function blackjack(array) {
+  let counter = 0;
+  const players = {};
+  return (num1, num2) => {
+    const key = `${num1}-${num2}`;
+    players[key] = {lastSum: 0, isBust: false, isFirstTurn: true};
+    return () => {
+      const player = players[key];
+      if (player.isFirstTurn) {
+        player.lastSum = num1 + num2;
+        player.isFirstTurn = false;
+        return player.lastSum;
+      }
+      if (!player.isFirstTurn) {
+        if (player.isBust) return 'you are done!';
+        player.lastSum += array[counter];
+        counter++;
+        const is21OrUnder = player.lastSum <= 21;
+        if (is21OrUnder) {
+          return player.lastSum;
+        }
+        player.isBust = true;
+        return 'bust';
+      }
+    };
+  };
+}
+
+const deck = [
+  2, 6, 1, 7, 11, 4, 6, 3, 9, 8, 9, 3, 10, 4, 5, 3, 7, 4, 9, 6, 10, 11,
+];
+const deal = blackjack(deck);
+const player1 = deal(4, 5);
+const player2 = deal(2, 2);
+console.log(player1()); // should log 9
+console.log(player2()); // should log 4
+console.log(player1()); // should log 11
+console.log(player2()); // should log 10
+console.log(player1()); // should log 12
+console.log(player2()); // should log 17
+console.log(player1()); // should log bust
+console.log(player2()); // should log 21
+console.log(player1()); // should log you are done!
