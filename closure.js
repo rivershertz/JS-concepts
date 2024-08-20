@@ -297,30 +297,38 @@ const {handleHistory, getHistory} = makeHistory(3);
 // console.log(getHistory());
 
 // CHALLENGE 19
-function blackjack(array) {
-  let counter = 0;
+function blackjack(deck) {
+  let cardCounter = 0;
   const players = {};
-  return (num1, num2) => {
-    const key = `${num1}-${num2}`;
-    players[key] = {lastSum: 0, isBust: false, isFirstTurn: true};
+  function initPlayer({name, card1, card2, key}) {
+    const initialPlayerDetails = {
+      lastSum: card1 + card2,
+      isBust: false,
+      isFirstTurn: true,
+      name,
+    };
+    players[key] = initialPlayerDetails;
+  }
+  return (card1, card2, name = 'anonymous') => {
+    const key = `${name}-${card1}${card2}`;
+    initPlayer({name, card1, card2, key});
     return () => {
       const player = players[key];
       if (player.isFirstTurn) {
-        player.lastSum = num1 + num2;
         player.isFirstTurn = false;
-        return player.lastSum;
+        return `${player.name} starts with ${player.lastSum}`;
       }
-      if (!player.isFirstTurn) {
-        if (player.isBust) return 'you are done!';
-        player.lastSum += array[counter];
-        counter++;
-        const is21OrUnder = player.lastSum <= 21;
-        if (is21OrUnder) {
-          return player.lastSum;
+      if (!player.isBust) {
+        player.lastSum += deck[cardCounter];
+        cardCounter++;
+        const isBlackjackOrUnder = player.lastSum <= 21;
+        if (isBlackjackOrUnder) {
+          return `${player.name}'s got ${player.lastSum}`;
         }
         player.isBust = true;
-        return 'bust';
+        return `${player.name} is busted`;
       }
+      return `${player.name} is done!`;
     };
   };
 }
@@ -329,8 +337,8 @@ const deck = [
   2, 6, 1, 7, 11, 4, 6, 3, 9, 8, 9, 3, 10, 4, 5, 3, 7, 4, 9, 6, 10, 11,
 ];
 const deal = blackjack(deck);
-const player1 = deal(4, 5);
-const player2 = deal(2, 2);
+const player1 = deal(4, 5, 'jack');
+const player2 = deal(2, 2, 'jill');
 console.log(player1()); // should log 9
 console.log(player2()); // should log 4
 console.log(player1()); // should log 11
@@ -340,3 +348,6 @@ console.log(player2()); // should log 17
 console.log(player1()); // should log bust
 console.log(player2()); // should log 21
 console.log(player1()); // should log you are done!
+console.log(player1()); // should log you are done!
+console.log(player2()); // should log bust
+console.log(player2()); // should log you are done!
